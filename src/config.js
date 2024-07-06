@@ -1,0 +1,1 @@
+export const TOKEN_SECRET='26secret00'
