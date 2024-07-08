@@ -39,6 +39,11 @@ export function SongProvider({ children }) {
     } else {
       throw new Error('La cancion ya está dentro de Favoritos');
     }
+    setErrors(Error)
+  }
+
+  const removeFavorite = (song) => {
+    setFavorities(favorities.filter(item => item !== song));
   }
 
   const getSongRequest = async () => {
@@ -89,7 +94,8 @@ export function SongProvider({ children }) {
       selectParagraph,
       errors,
       songSelected,
-      addOnFavorities
+      addOnFavorities,
+      removeFavorite
     }}>
       {children}
     </SongContext.Provider>
